@@ -1,13 +1,15 @@
 <%= simple_form_for @new_post, :html => { :class => 'form-horizontal' },
-  remote: true, input_html: { data: { url: '/posts', type: :json } } do |f| %>
+  remote: true, input_html: { data: { url: posts_path, type: :json } }, format: :json do |f| %>
   <%= f.error_notification %>
 
   <%= f.text_area :text, class: "span10", rows: 2 %>
   <%= f.button :submit, class: "span2" %>
 <% end %>
 <!-- <div class="new_comment"><textarea placeholder="What's on your mind?"></textarea></div> -->
-<% @posts.each do |post| %>
-  <div id="post<%= post.id %>" class="span6">
-    <p><%= post.text %></p>
-  </div>
-<% end %>
+<div id="all_posts">
+  <% @posts.each do |post| %>
+    <div id="post<%= post.id %>" class="span6">
+      <p><%= post.text %></p>
+    </div>
+  <% end %>
+</div>
