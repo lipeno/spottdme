@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+$(function() {
+    $("#new_post").bind("ajax:complete", function(event,xhr,status){
+      $('#all_posts').prepend(xhr.responseText);
+      console.log(xhr.responseText);
+    });
+});
