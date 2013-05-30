@@ -11,6 +11,7 @@ gem "friendly_id"
 gem 'pg'
 gem 'underscore-rails'
 gem 'aws-sdk'
+gem 'acts-as-taggable-on'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

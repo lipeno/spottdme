@@ -6,4 +6,3 @@ class AngularController < ApplicationController
     end
   end
 end
-
