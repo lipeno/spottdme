@@ -56,3 +56,4 @@ end
 
 # To use debugger
 # gem 'debugger'
+gem 'rails_admin', '~> 0.4.8'

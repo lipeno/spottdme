@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def index
     if params[:tag]
       @posts = Post.tagged_with(params[:tag])
+      # @posts = Post.tagged_with(params[:tag], :any => true)
     else
       @posts = Post.all
     end
