@@ -6,42 +6,52 @@
     <div class="row main-features">
         <div class="span6">
             <div id="fb-root"></div>
-            <script>(function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=144861229023265";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-            </script>
+
             <div class="well">
                 <p><input type="text" ng-model="newPost" placeholder="Write here who you saw"> </p>
                 <a class="btn btn-primary" ng-click="addPost()"><span class="btn-label">Add new</span></a>
             </div>
             <div class="well" class="commentsWell">
-                <p>Enter a brief description of why it's so awesome here. Then move on to
-                    the next feature.</p>
-                <fb:comments class="comments" href="http://www.jutarnji.hr/wales---hrvatska-1-2-spektakularni-preokret-lovren-i-eduardo-pogodili-za-novu-veliku-pobjedu-/1093282/" width="470" num_posts="10"></fb:comments>
-                <div style="clear:both"></div>
+                <p>This is a test post.</p>
+                <fb:comments class="comments" href="http://www.spottd.me/42353453453/" width="470" num_posts="2"></fb:comments>
+                <p><a href="#">See more comments...</a></p>
             </div>
+
             <div class="well" ng-repeat="post in posts | orderBy:id" ng-show="!isOdd(post)">
                     <p>{{post.text}}</p>
-                    <span ng-repeat="tag in post.tags">{{tag}} </span>
-                    <p>Created at: {{post.created_at}}</p>
-                    <div class="well">Comments go here</div>
+
+                <span ng-repeat="tag in post.tags">{{tag}} </span>
+                    <div class="well">                <fb:comments class="comments" href="http://www.spottd.me/posts/{{post.id}}/" width="470" num_posts="2"></fb:comments>
+                        <p><a href="#">See more comments...</a></p>
+
+                    </div>
+                <p>Created at: {{post.created_at}}</p>
             </div>
 
         </div>
         <div class="span6">
             <div class="well" ng-repeat="post in posts | orderBy:id" ng-show="isOdd(post)">
-                    <p>{{post.text}}</p>
-                    <span ng-repeat="tag in post.tags">{{tag}} </span>
-                    <p>Created at: {{post.created_at}}</p>
-                    <div class="well">Comments go here</div>
+                <p>{{post.text}}</p>
+
+                <span ng-repeat="tag in post.tags">{{tag}} </span>
+                <div class="well">                <fb:comments class="comments" href="http://www.spottd.me/posts/{{post.id}}/" width="470" num_posts="2"></fb:comments>
+                    <p><a href="#">See more comments...</a></p>
+
+                </div>
+                <p>Created at: {{post.created_at}}</p>
             </div>
         </div>
     </div>
 </div>
 </body>
+
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=144861229023265";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 
 </html>
