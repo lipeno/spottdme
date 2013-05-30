@@ -1,0 +1,1 @@
+// do this on initialize, some javascript code

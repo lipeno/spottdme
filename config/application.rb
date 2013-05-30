@@ -9,28 +9,14 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Spottd
+module Startupality
   class Application < Rails::Application
-
-    # don't generate RSpec tests for views and helpers
-    config.generators do |g|
-      
-      g.test_framework :rspec, fixture: true
-      g.fixture_replacement :factory_girl, dir: 'spec/factories'
-      
-      
-      g.view_specs false
-      g.helper_specs false
-    end
-
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
-    config.autoload_paths += %W(#{config.root}/lib)
-
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -51,7 +37,7 @@ module Spottd
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password, :password_confirmation]
+    config.filter_parameters += [:password]
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
@@ -70,7 +56,29 @@ module Spottd
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    #Needs to be false on Heroku
+    config.assets.initialize_on_precompile = false
+
+    # Can be set to invalidate the whole cache
+    config.assets.version = "1.1"
+
+    # Serving static assets and setting cache headers
+    # which will be used by cloudfront as well
+    config.serve_static_assets = true
+    config.static_cache_control = "public, max-age=31536000"
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+        config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
+    # config.logger = Logger.new(STDOUT)
+
+    # Added this to disable automatic js and css creation
+    config.generators do |g|
+      g.stylesheets false
+      g.javascripts false
+    end
+
   end
 end
