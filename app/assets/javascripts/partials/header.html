@@ -1,0 +1,51 @@
+<header id="header" ng-controller="HeaderController">
+    <div class="row">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="navbar-content">
+                        <span class="label">Zagreb</span>
+                        <span class="label">Movie pub</span>
+                        <span class="label">Pula</span>
+                        <span class="label">Pepermint</span>
+                    </div>
+                    <form class="navbar-search pull-right">
+                        <input type="text" class="search-query" placeholder="Search...">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="span5">
+            <ul class="breadcrumb nav nav-tabs pull-left">
+                <li ng-class="{active: routeIs('/dashboard')}">
+                    <a href="#/dashboard"><i class="icon-home"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a  href="#/posts"><i class="icon-ok-sign"></i> Posts</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span5 pull-right">
+            <div class="pull-right">
+                    <ul class="breadcrumb nav nav-tabs pull-right">
+                        <li>
+                            <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                                <i class="icon-user"></i> {{currentUser.email}} <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <li>
+                                    <a href="#">Settings</a>
+                                </li>
+                                <li>
+                                    <a href="/users/sign_out" data-method="delete" rel="nofollow">Logout...</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+            </div>
+        </div>
+
+</header>

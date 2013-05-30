@@ -10,13 +10,23 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+//= require lib/jquery.min
 //= require jquery_ujs
-//= require bootstrap
-//= require_tree .
-$(function() {
-    $("#new_post").bind("ajax:complete", function(event,xhr,status){
-      $('#all_posts').prepend(xhr.responseText);
-      console.log(xhr.responseText);
-    });
-});
+//= require underscore
+//= require lib/jquery-ui.min
+//= require lib/select2/select2
+//= require lib/bootstrap.min
+//= require lib/toastr
+
+//= require angular
+//= require angular-resource
+//= require angular-ui
+//= require app/app
+//= require app/directives
+//= require app/filters
+//= require app/services
+//= require app/models
+//= require_tree ./controllers/
+//= require_tree ./modules/
+//= require init
+

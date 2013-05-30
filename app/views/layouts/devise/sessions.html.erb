@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Startupality</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "http://use.typekit.com/dpo4vyi.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="content">
+
+	<div class="container userManagement">
+        <br />
+        <img src="/assets/logoNarrow.png" style="width:250px">
+        <br /><br />
+
+        <%= yield %>
+	</div>
+</div>
+
+
+
+</body>
+</html>

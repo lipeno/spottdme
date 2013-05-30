@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Spottd::Application.load_tasks
+Startupality::Application.load_tasks
