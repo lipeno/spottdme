@@ -21,6 +21,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-ui
+//= require lib/moment.min
 //= require app/app
 //= require app/directives
 //= require app/filters
