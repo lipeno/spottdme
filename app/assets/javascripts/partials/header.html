@@ -1,9 +1,9 @@
-<header id="header" ng-controller="HeaderController" class="navbar navbar-fixed-top">
+<div ng-controller="HeaderController" >
+    <header id="header" class="navbar navbar-fixed-top">
         <nav class="navbar-inner">
                 <div class="container">
                     <a href="/" class="brand">Spottd.me</a>
                 </div>
-            </div>
         </nav>
 </header>
 <div class="row">
@@ -14,10 +14,15 @@
             </li>
         </ul>
     </div>
-    <div ng-repeat="tag in tags" class="span4">{{tag}} </div>
+    <div>
+        <div ng-repeat="tag in tags" class="span4">{{tag.name}} </div>
+
+    </div>
     <div class="span4">
         <form class="pull-right">
             <input type="text" class="search-query" placeholder="Search...">
         </form>
     </div>
+</div>
+
 </div>

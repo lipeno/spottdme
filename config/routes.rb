@@ -6,4 +6,5 @@ Startupality::Application.routes.draw do
   match 'tags', to: 'tags#index'
 
   resources :posts
+  resources :tags
 end
