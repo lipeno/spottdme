@@ -19,11 +19,11 @@
  *= require jquery-ui
  *= require toastr
  */
-#angular_angular {
+body#angular_angular {
   background: #e9eaed
 }
 
-#main .well {
+div#main .well {
   background: #fff;
   border: solid 1px #ddd;
 }
