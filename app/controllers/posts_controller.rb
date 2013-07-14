@@ -6,7 +6,7 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with(params[:tag])
       # @posts = Post.tagged_with(params[:tag], :any => true)
     else
-      @posts = Post.all
+      @posts = Post.order("created_at DESC")
     end
 
 
