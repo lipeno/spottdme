@@ -19,3 +19,9 @@ app.filter('capitalize', function() {
             return str.charAt(0).toUpperCase() + str.slice(1);
     }
 });
+
+app.filter('fromNow', function() {
+        return function(dateString) {
+            return moment(new Date(dateString)).fromNow()
+        };
+});
