@@ -131,3 +131,17 @@ app.directive('chart', function () {
         }
 });
 
+app.directive("fbComments", function() {
+    return {
+        restrict: 'C',
+        link: function(scope, element, attributes) {
+            var doTheMagic = function () {
+                return typeof FB !== "undefined" && FB !== null ? FB.XFBML.parse(element.parent()[0]) : void 0;
+            }
+
+            attributes.$observe("fbComments", doTheMagic);
+
+        }
+    };
+});
+
