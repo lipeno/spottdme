@@ -2,7 +2,7 @@ var app = angular.module("mainapp", ["ngResource",'ui.bootstrap','ui', 'ngDragDr
 
 app.config(function ($routeProvider) {
         $routeProvider.
-//            when('/dashboard', {templateUrl:"/assets/partials/projects.html", controller: 'ProjectsController'}).
             when('/posts', {templateUrl:"/assets/partials/posts.html", controller: 'PostsController'}).
+            when('/tags', {templateUrl:"/assets/partials/tags.html", controller: 'TagsController'}).
             otherwise({redirectTo:'/posts'});
 });
