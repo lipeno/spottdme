@@ -7,7 +7,7 @@ app.config(["$httpProvider", function(provider) {
 
 app.config(function ($routeProvider) {
         $routeProvider.
-            when('/dashboard', {templateUrl:"/assets/partials/projects.html", controller: 'ProjectsController'}).
+//            when('/dashboard', {templateUrl:"/assets/partials/projects.html", controller: 'ProjectsController'}).
             when('/posts', {templateUrl:"/assets/partials/posts.html", controller: 'PostsController'}).
-            otherwise({redirectTo:'/dashboard'});
+            otherwise({redirectTo:'/posts'});
 });
