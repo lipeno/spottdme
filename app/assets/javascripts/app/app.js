@@ -1,4 +1,4 @@
-var app = angular.module("mainapp", ["ngResource",'ui.bootstrap','ui', 'ngDragDrop']);
+var app = angular.module("mainapp", ["ngResource",'ui.bootstrap','ui', 'ngDragDrop', 'FacebookPluginDirectives']);
 
 app.config(function ($routeProvider) {
         $routeProvider.
