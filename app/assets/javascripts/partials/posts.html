@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:fb="http://ogp.me/ns/fb#">
+<body>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -8,8 +8,6 @@
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
-
-<body>
 <div class="container">
     <a class="btn btn-large btn-primary btn-block visible-phone" href="#"><span class="btn-label">Sign Up Today!</span></a>
     <div class="row main-features">
@@ -31,7 +29,8 @@
 
                 <span ng-repeat="tag in post.tags">{{tag}} </span>
                     <div class="well">
-                        <fb:comments class="comments" href="http://spottdme.herokuapp.com//posts/{{post.id}}/" width="470" num_posts="2"></fb:comments>
+                        <div class="fb-comments" data-href="http://spottdme.herokuapp.com//posts/{{post.id}}/" data-width="470" data-num-posts="2"></div>
+                        <!--<fb:comments class="comments" href="http://spottdme.herokuapp.com//posts/{{post.id}}/" width="470" num_posts="2"></fb:comments>-->
                         <p><a href="#">See more comments...</a></p>
 
                     </div>
@@ -45,7 +44,9 @@
 
                 <span ng-repeat="tag in post.tags">{{tag}} </span>
                 <div class="well">
-                    <fb:comments class="comments" href="http://spottdme.herokuapp.com/posts/{{post.id}}/" width="470" num_posts="2"></fb:comments>
+                    <div class="fb-comments" data-href="http://spottdme.herokuapp.com//posts/{{post.id}}/" data-width="470" data-num-posts="2"></div>
+
+                    <!--<fb:comments class="comments" href="http://spottdme.herokuapp.com/posts/{{post.id}}/" width="470" num_posts="2"></fb:comments>-->
                     <p><a href="#">See more comments...</a></p>
 
                 </div>
