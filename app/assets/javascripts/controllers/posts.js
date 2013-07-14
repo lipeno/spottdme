@@ -1,7 +1,7 @@
 app.controller('PostsController', function ( $scope, $location, Post) {
     // Define persisted object
     $scope.posts = Post.query(function(){
-
+        $scope.sortPosts();
     });
 
 
@@ -16,10 +16,30 @@ app.controller('PostsController', function ( $scope, $location, Post) {
         }
         var newPost = new Post();
         newPost.text = $scope.newPost;
-        $scope.posts.push(newPost);
         newPost.$save(newPost);
 
+        newPost.id = findMaxId($scope.posts) + 1;
+
+        $scope.posts.push(newPost);
+        $scope.sortPosts();
         $scope.newPost = '';
+    };
+
+    findMaxId = function(arr) {
+        var max = arr[0].id;
+        var len = arr.length;
+        for (var i = 1; i < len; i++) {
+            if (arr[i].id > max) {
+                max = arr[i].id;
+            }
+        }
+        return max;
+    }
+
+    $scope.sortPosts = function() {
+        $scope.posts = $scope.posts.sort(function (a, b) {
+            return b.id - a.id
+        });
     };
 
     $scope.isOdd =  function(post) {
