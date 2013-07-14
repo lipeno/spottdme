@@ -1,59 +1,33 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
-gem 'devise'
-gem 'cancan'
-gem "haml"
-gem "select2-rails"
-gem 'jquery-rails'
-gem 'simple_form'
-gem "friendly_id"
-gem 'pg'
-gem 'underscore-rails'
-gem 'aws-sdk'
-gem 'acts-as-taggable-on'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '3.2.13'
+gem 'haml', '4.0.3'
+gem 'select2-rails', '3.4.1'
+gem 'jquery-rails', '2.3.0'
+gem 'simple_form', '2.1.0'
+gem 'friendly_id', '4.0.9'
+gem 'pg', '0.15.1'
+gem 'underscore-rails', '1.4.4'
+gem 'aws-sdk', '1.11.0'
+gem 'acts-as-taggable-on', '2.4.1'
 
 group :development, :test do
-  gem 'thin'
-  gem 'meta_request'
-  gem 'rails-erd' # for generating er diagrams
+  gem 'thin', '1.5.1'
+  gem 'meta_request', '0.2.6'
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'compass-rails'
-  gem 'compass_twitter_bootstrap'
-  gem 'yui-compressor'
-  gem 'angularjs-rails'
-  gem 'angular-ui-rails'
+  gem 'sass-rails', '3.2.6'
+  gem 'coffee-rails', '3.2.2'
+  gem 'compass-rails', '1.0.3'
+  gem 'compass_twitter_bootstrap', '2.3.1'
+  gem 'yui-compressor', '0.9.6'
+  gem 'angularjs-rails', '1.0.7'
+  gem 'angular-ui-rails', '0.4.0.2'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '2.1.1'
 end
 
-# GEMS FOR PRODUCTION
 group :production do
-  # Use unicorn as the app server
-  gem 'unicorn'
+  gem 'unicorn', '4.6.3'
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-gem 'rails_admin', '~> 0.4.8'
