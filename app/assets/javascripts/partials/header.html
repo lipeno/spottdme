@@ -15,14 +15,41 @@
         </ul>
     </div>
     <div>
-        <div ng-repeat="tag in tags" class="span4">{{tag.name}} </div>
 
     </div>
     <div class="span4">
-        <form class="pull-right">
-            <input type="text" class="search-query" placeholder="Search...">
+        <form class="pull-right" ng-submit="searchTags(text)">
+            <input ng-model="text" type="text" class="search-query" placeholder="Search...">
         </form>
     </div>
 </div>
+    <div ng-show="searchEntered">
+
+        <tag-manager tags="tagsToDisplay"></tag-manager>
+    </div>
+
 
 </div>
+
+        <style>
+
+            .tags {
+                margin: 10px 0;
+            }
+            .tags .tag {
+                border-radius: 6px;
+                background-color: #EFEFEF;
+                border: 1px solid #DDD;
+                padding: 5px;
+                margin-right: 10px;
+            }
+            .tags .tag:hover {
+                color: red;
+                text-decoration: none;
+            }
+
+            input {
+                margin-bottom: 0px !important;
+            }
+
+        </style>
