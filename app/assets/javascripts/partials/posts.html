@@ -14,31 +14,25 @@
                 <!--<p><a href="#">See more comments...</a></p>-->
             <!--</div>-->
 
-            <div class="well" ng-repeat="post in posts | orderBy:id" ng-show="!isOdd(post)">
+            <div class="well" ng-repeat="post in posts | orderBy:updated_at" ng-show="!isOdd(post)">
                     <p>{{post.text}}</p>
 
                 <span ng-repeat="tag in post.tags">{{tag}} </span>
                     <div class="well">
                         <div class="fb-comments" data-href="http://spottdme.herokuapp.com/posts/{{post.id}}/" data-width="470" data-num-posts="2"></div>
                         <!--<fb:comments class="comments" href="http://spottdme.herokuapp.com//posts/{{post.id}}/" width="470" num_posts="2"></fb:comments>-->
-                        <p><a href="#">See more comments...</a></p>
-
                     </div>
                 <p>{{post.created_at | fromNow}}</p>
             </div>
 
         </div>
         <div class="span6">
-            <div class="well" ng-repeat="post in posts | orderBy:id" ng-show="isOdd(post)">
+            <div class="well" ng-repeat="post in posts | orderBy:updated_at" ng-show="isOdd(post)">
                 <p>{{post.text}}</p>
 
                 <span ng-repeat="tag in post.tags">{{tag}} </span>
                 <div class="well">
                     <div class="fb-comments" data-href="http://spottdme.herokuapp.com/posts/{{post.id}}/" data-width="470" data-num-posts="2"></div>
-
-                    <!--<fb:comments class="comments" href="http://spottdme.herokuapp.com/posts/{{post.id}}/" width="470" num_posts="2"></fb:comments>-->
-                    <p><a href="#">See more comments...</a></p>
-
                 </div>
                 <p>{{post.created_at | fromNow}}</p>
             </div>
